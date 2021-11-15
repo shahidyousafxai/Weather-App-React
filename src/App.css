@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 40vw;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  background-color: rgb(0, 0, 0);
+  color: rgb(172, 172, 172);
+  border-radius: 15px;
+  padding: 1em 2em;
+}
+.search {
+  display: flex;
+  justify-content: space-evenly;
+}
+.input {
+  background-color: rgb(51, 51, 51);
+  border: 1.5px solid rgb(165, 165, 165);
+  border-radius: 50px;
+  text-indent: 10px;
+  color: rgb(185, 185, 185);
+  height: 30px;
+  width: 70%;
+}
+.btn {
+  color: rgb(139, 139, 139);
+  border: 1.5px solid rgb(139, 139, 139);
+  padding: 5px;
+  height: 30px;
+  width: 15%;
+  border-radius: 50px;
+  background-color: rgb(51, 51, 51);
+}
+.result {
+  display: flex;
+  justify-content: space-evenly;
+  height: 150px;
+}
+.temprature {
+  display: flex;
+}
+.degree-symbol {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+}
+hr {
+  background-color: rgb(139, 139, 139);
+  height: 2px;
+  border: none;
+}
+.temprature .degree {
+  font-size: 3em;
+}
+.temprature .symbol {
+  font-size: 20px;
+}
+.cond {
+  text-align: center;
+}
+.weather-span,
+.city-span {
+  text-transform: capitalize;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 888px) {
+  .container {
+    width: 50vw;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 728px) {
+  .container {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .container {
+    width: 60vw;
+  }
+  .search {
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+  }
+  .result {
+    flex-direction: column;
+    align-items: center;
   }
 }
