@@ -7,6 +7,7 @@ const DisplayWeather = (city) => {
   const [weather, setWeather] = useState()
   const [condition, setCondition] = useState()
   const [humidity, setHumidity] = useState()
+  const [country, setCountry] = useState()
   const ChangeName = (city) => {
     city === '' ? alert('Please enter city...!') : setCityname(city)
   }
@@ -15,9 +16,12 @@ const DisplayWeather = (city) => {
     var temp = weather.data.main.temp
     var cond = weather.data.weather[0].description
     var hum = weather.data.main.humidity
+    var count = weather.data.sys.country
     setWeather(temp)
     setCondition(cond)
     setHumidity(hum)
+    setCountry(count)
+    console.log(cond)
   }
 
   useEffect(() => {
@@ -56,12 +60,40 @@ const DisplayWeather = (city) => {
             <div className='digits'>
               <span className='temprature'>
                 <span className='degree'>{weather}</span>{' '}
-                <span className='symbol'>&#176;C</span>
+                <div className='temp-symbol'>
+                  <span className='symbol {}'>&#176;C</span>
+                  <i
+                    className={
+                      condition === 'clear sky'
+                        ? 'fas fa-sun color'
+                        : condition === 'few clouds'
+                        ? 'fas fa-cloud-sun color'
+                        : condition === 'scattered clouds'
+                        ? 'fas fa-cloud color'
+                        : condition === '	broken clouds'
+                        ? 'fas fa-cloud color'
+                        : condition === 'shower rain'
+                        ? 'fas fa-cloud-showers-heavy color'
+                        : condition === 'rain'
+                        ? 'fas fa-cloud-showers-heavy color'
+                        : condition === 'snow'
+                        ? 'fas fa-snowflake color'
+                        : condition === 'overcast clouds'
+                        ? 'fas fa-cloud color'
+                        : ''
+                    }
+                  ></i>
+                </div>
               </span>
             </div>
             <div className='cond'>
               <p className='city'>
-                City: <span className='city-span'>{cityname}</span>
+                City:{' '}
+                <span className='city-span'>
+                  {cityname}
+                  {', '}
+                  {country}
+                </span>
               </p>
               <p className='weather'>
                 Condition: <span className='weather-span'>{condition}</span>
