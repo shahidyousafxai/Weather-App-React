@@ -21,7 +21,7 @@ const SearchCity = ({ ChangeName }) => {
         onChange={HandleCity}
       />
       <button className='btn' onClick={HandleChange}>
-        <i class='fas fa-search'></i>
+        <i className='fas fa-search'></i>
       </button>
     </div>
   )
