@@ -45,7 +45,7 @@ const CurrentCity = () => {
       var long = position.coords.longitude
       axios
         .get(
-          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${long}?key=CM2SRAXYQS2W65SGH3HRLMSS4`
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${long}?key=3UXAPDGA7RSE8EPQLPH5Z2G2N`
         )
         .then((res) => DisplayCurrentData(res))
     })
